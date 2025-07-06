@@ -8,13 +8,17 @@ Materialsammlung für das Studium der Wahrscheinlichkeitsrechnung und Kryptograp
 - **`Klausuranalyse_WuK.ipynb`** - Jupyter Notebook mit systematischer Analyse der Aufgabentypen und optimaler Klausurstrategie
 - **`Spickzettel_Formeln_WuK.md`** - Kompakter Spickzettel mit allen wichtigen Formeln und Lösungsansätzen
 
-### 📁 **Probeklausuren**
-- **`Probeklausuren/`** - Sammlung von 5 analysierten Klausuren:
-  - 21SoSe-Klausur_WuK.pdf
-  - SoSe20-Klausur_WuK.pdf
-  - Klausur_Wahrsch_Krypto_WS0607.pdf
-  - Klausur_Wahrsch-Krypto_SS14.pdf
-  - Klausur_Wahrsch-Krypto_WS0809.pdf
+### 📁 **Probeklausuren & Lösungen**
+
+| Klausur | Probeklausur (PDF) | Lösungen (Markdown) | Punkte | Besonderheiten |
+|---------|-------------------|---------------------|---------|----------------|
+| **21SoSe** | [📄 21SoSe-Klausur_WuK.pdf](./Probeklausuren/21SoSe-Klausur_WuK.pdf) | [📝 Lösungen](./Loesung_21SoSe_WuK.md) | 100 + 10 Bonus | Moderne Klausur |
+| **SoSe20** | [📄 SoSe20-Klausur_WuK.pdf](./Probeklausuren/SoSe20-Klausur_WuK.pdf) | [📝 Lösungen](./Loesung_SoSe20_WuK.md) | 100 + 9 Bonus | Corona-Klausur |
+| **WS0607** | [📄 Klausur_Wahrsch_Krypto_WS0607.pdf](./Probeklausuren/Klausur_Wahrsch_Krypto_WS0607.pdf) | [📝 Lösungen](./Loesung_WS0607_WuK.md) | 55 + 5 Bonus | Klassisches Format |
+| **SS14** | [📄 Klausur_Wahrsch-Krypto_SS14.pdf](./Probeklausuren/Klausur_Wahrsch-Krypto_SS14.pdf) | [📝 Lösungen](./Loesung_SS14_WuK.md) | 55 + 5 Bonus | Standardaufgaben |
+| **WS0809** | [📄 Klausur_Wahrsch-Krypto_WS0809.pdf](./Probeklausuren/Klausur_Wahrsch-Krypto_WS0809.pdf) | [📝 Lösungen](./Loesung_WS0809_WuK.md) | 55 + 5 Bonus | BANANEN-Aufgabe |
+
+**Hinweis:** Alle Lösungen sind im **Spickzettel-Stil** verfasst mit kompakten Formeln, Strategien und Zeitplanung.
 
 ### 📈 **Semesterordner**
 - **`SS19/`** bis **`SS24/`** - Archivierte Materialien verschiedener Semester
@@ -50,6 +54,19 @@ Kombinationen: C(n,k) = n!/(k!(n-k)!)
 P(Krank|Test+) = (Sensitivität × P(Krank)) / 
                  (Sensitivität × P(Krank) + Falsch-Positiv × P(Gesund))
 ```
+
+## 🚀 **Schnellzugriff**
+
+### **📖 Lernmaterialien**
+- **[🎯 Klausuranalyse (Jupyter)](./Klausuranalyse_WuK.ipynb)** - Systematische Analyse & Strategie
+- **[📋 Formelsammlung](./Spickzettel_Formeln_WuK.md)** - Kompakter Spickzettel mit allen Formeln
+
+### **📝 Alle Lösungen im Überblick**
+- **[21SoSe Lösungen](./Loesung_21SoSe_WuK.md)** - Neueste Klausur (100+10 Punkte)
+- **[SoSe20 Lösungen](./Loesung_SoSe20_WuK.md)** - Corona-Klausur (100+9 Punkte)
+- **[WS0607 Lösungen](./Loesung_WS0607_WuK.md)** - Klassisches Format (55+5 Punkte)
+- **[SS14 Lösungen](./Loesung_SS14_WuK.md)** - Standardaufgaben (55+5 Punkte)
+- **[WS0809 Lösungen](./Loesung_WS0809_WuK.md)** - BANANEN-Aufgabe (55+5 Punkte)
 
 ## 🚀 **Verwendung**
 
