@@ -83,9 +83,9 @@
 
 ---
 
-## **4. SCHÜTZEN/TREFFER-AUFGABEN**
+## **4. SCHÜTZEN--Würfel/TREFFER-AUFGABEN**
 
-### **Binomialverteilung (genau k Treffer)**
+### **Binomialverteilung (genau k Treffer) -- Würfel**
 **Formel:** $P(X = k) = \binom{n}{k} \cdot p^k \cdot (1-p)^{n-k}$
 - **Variablen:** n = Anzahl Versuche, k = Anzahl Treffer, p = Trefferwahrscheinlichkeit
 - **Beispiel:** 3 Schüsse, p=0.5, genau 2 Treffer → n=3, k=2, p=0.5 → $\binom{3}{2} \cdot 0.5^2 \cdot 0.5^1 = 0.375$
@@ -183,14 +183,11 @@ $$P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B|A) \cdot P(A) + P(B|A^c) \cdot P(A^c)}$$
 - **Summe 12:** (6,6) → 1 Weg → P = 1/36
 **Antwort:** Summe 7 ist am häufigsten mit P = 6/36 = 1/6
 
-### **b) Unterscheidbare vs ununterscheidbare Würfel ✅**
-**Unterscheidbare Würfel:** 6ⁿ Möglichkeiten (n = Anzahl Würfel)
-**Ununterscheidbare Würfel:** "Stars and Bars" / Partitionen-Problem
-- **Formel:** $\binom{n+k-1}{k-1} = \binom{n+k-1}{n}$ wobei n = Anzahl Würfel, k = 6 (Augenzahlen)
-- **Beispiel 3 ununterscheidbare Würfel:** $\binom{3+6-1}{6-1} = \binom{8}{5} = 56$
-- **Alternative Schreibweise:** $\binom{3+6-1}{3} = \binom{8}{3} = 56$
-- **Stars and Bars:** Verteile n identische Objekte auf k unterschiedliche Kategorien
-- **Systematische Aufzählung:** Alle (a,b,c) mit a ≤ b ≤ c: (1,1,1), (1,1,2), ..., (6,6,6)
+### **b) Unterscheidbare vs ununterscheidbare Würfel**
+**Unterscheidbare Würfel:** $6^n$ Möglichkeiten (n = Anzahl Würfel)
+**Ununterscheidbare Würfel:** $\binom{n+5}{5}$ ("Stars and Bars")
+- **Beispiel 3 Würfel:** $\binom{3+5}{5} = \binom{8}{5} = 56$
+- **Variablen:** n = Anzahl Würfel
 
 ### **c) Anzahl verschiedene Ergebnisse (SoSe20) ✅**
 **Frage:** "Wie viele verschiedene Ergebnisse sind möglich?"
@@ -201,18 +198,40 @@ $$P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B|A) \cdot P(A) + P(B|A^c) \cdot P(A^c)}$$
 - **Variablen:** n = Anzahl Würfel, k = Anzahl verschiedene Augenzahlen (1-6)
 - **⚠️ Gemeinheit:** Das ist Kombinatorik, nicht Wahrscheinlichkeit!
 
-### **d) Min/Max bei mehreren Würfeln**
-**Methode:** Systematische Aufzählung nach Werten
-- **Min(X,Y) bei 2 Würfeln:** P(Min=1) = 11/36, P(Min=2) = 9/36, P(Min=3) = 7/36, etc.
-- **Max(X,Y) bei 2 Würfeln:** P(Max=6) = 11/36, P(Max=5) = 9/36, P(Max=4) = 7/36, etc.
-- **⚠️ Gemeinheit:** Keine Formel - immer alle Fälle einzeln durchgehen!
+### **d) Keine/höchstens k Augenzahlen (Binomialverteilung)**
+**Formel:** $P(X = k) = \binom{n}{k} \cdot p^k \cdot (1-p)^{n-k}$
+- **Keine 6:** $P = \left(\frac{5}{6}\right)^n$
+- **Höchstens eine 6:** $P = \left(\frac{5}{6}\right)^n + n \cdot \frac{1}{6} \cdot \left(\frac{5}{6}\right)^{n-1}$
+- **Beispiel:** 3 Würfe, höchstens eine 6 → $\left(\frac{5}{6}\right)^3 + 3 \cdot \frac{1}{6} \cdot \left(\frac{5}{6}\right)^2 = \frac{125}{216} + \frac{75}{216} = \frac{25}{27}$
 
-### **e) Mindestens einer zeigt bestimmte Augenzahl(en) ✅**
+### **e) Produkt-Teilbarkeit**
+**Strategie:** Bestimme gültige Augenzahlen pro Bedingung
+- **Nicht durch 2:** Alle Würfe ungerade → nur {1,3,5} → $\left(\frac{3}{6}\right)^n = \left(\frac{1}{2}\right)^n$
+- **Nicht durch 3:** Keine 3 oder 6 → nur {1,2,4,5} → $\left(\frac{4}{6}\right)^n = \left(\frac{2}{3}\right)^n$
+- **Weder durch 2 noch 3:** Ungerade UND nicht durch 3 → nur {1,5} → $\left(\frac{2}{6}\right)^n = \left(\frac{1}{3}\right)^n$
+- **Beispiel:** 3 Würfe, weder durch 2 noch 3 → $\left(\frac{1}{3}\right)^3 = \frac{1}{27}$
+
+### **f) Mindestens einer zeigt bestimmte Augenzahl(en)**
 **Strategie:** IMMER Gegenereignis verwenden!
-**Formel:** $P(\text{mindestens einer zeigt X}) = 1 - P(\text{keiner zeigt X})$
-- **Allgemein:** $P = 1 - \left(\frac{6-k}{6}\right)^n$ wobei k = günstige Augenzahlen, n = Anzahl Würfel
+**Formel:** $P = 1 - \left(\frac{6-k}{6}\right)^n$ wobei k = günstige Augenzahlen, n = Anzahl Würfel
+- **Beispiel:** Mindestens eine 1 oder 2 → $P = 1 - \left(\frac{4}{6}\right)^n = 1 - \left(\frac{2}{3}\right)^n$
 
-### **f) Erwartungswert/Varianz bei Würfeln (nur 21SoSe)**
+### **g) Min/Max bei mehreren Würfeln**
+**Min(X,Y) - kleinste Augenzahl:**
+**Formel:** $P(\text{Min} = k) = P(\text{beide} \geq k) - P(\text{beide} \geq k+1)$
+- $P(\text{Min} = k) = \left(\frac{6-k+1}{6}\right)^2 - \left(\frac{6-k}{6}\right)^2$
+- **Beispiel:** $P(\text{Min} = 1) = \left(\frac{6}{6}\right)^2 - \left(\frac{5}{6}\right)^2 = 1 - \frac{25}{36} = \frac{11}{36}$
+
+**Max(X,Y) - größte Augenzahl:**
+**Formel:** $P(\text{Max} = k) = P(\text{beide} \leq k) - P(\text{beide} \leq k-1)$
+- $P(\text{Max} = k) = \left(\frac{k}{6}\right)^2 - \left(\frac{k-1}{6}\right)^2$
+- **Beispiel:** $P(\text{Max} = 6) = \left(\frac{6}{6}\right)^2 - \left(\frac{5}{6}\right)^2 = 1 - \frac{25}{36} = \frac{11}{36}$
+
+**Verallgemeinerung für n Würfel:**
+- $P(\text{Min} = k) = \left(\frac{7-k}{6}\right)^n - \left(\frac{6-k}{6}\right)^n$
+- $P(\text{Max} = k) = \left(\frac{k}{6}\right)^n - \left(\frac{k-1}{6}\right)^n$
+
+### **h) Erwartungswert/Varianz bei Würfeln (nur 21SoSe)**
 **Wann:** Nur wenn explizit nach E[X] oder Var(X) gefragt wird
 **Formel:** $E[X] = \sum_{i} x_i \cdot P(X = x_i)$
 **Varianz:** $Var(X) = E[X^2] - (E[X])^2$
@@ -220,10 +239,11 @@ $$P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B|A) \cdot P(A) + P(B|A^c) \cdot P(A^c)}$$
 - **⚠️ Gemeinheit:** Kommt nur in neueren Klausuren vor, nicht in Standard-Würfel-Aufgaben!
 
 **Konkrete Beispiele aus Klausuren:**
+- **3 Würfe, keine 6:** $\left(\frac{5}{6}\right)^3 = \frac{125}{216}$
+- **3 Würfe, höchstens eine 6:** $\frac{125}{216} + \frac{75}{216} = \frac{25}{27}$
+- **3 Würfe, Produkt nicht durch 2 und 3:** $\left(\frac{1}{3}\right)^3 = \frac{1}{27}$
 - **SoSe20 Aufgabe 3:** "Wie viele verschiedene Ergebnisse?" → Unterscheidbar: 216, Ununterscheidbar: 56
-- **Min(X,Y) bei 2 Würfeln:** P(Min=1) = 11/36, P(Min=2) = 9/36, P(Min=3) = 7/36, etc.
-- **Summe bei 2 Würfeln:** P(Summe=7) = 6/36 (höchste Wahrscheinlichkeit), P(Summe=2) = 1/36
-- **⚠️ Gemeinheit:** Bei "Anzahl Ergebnisse" → Kombinatorik! Bei "Wahrscheinlichkeit" → Systematische Aufzählung!
+- **⚠️ Gemeinheit:** Bei Teilbarkeit immer gültige Augenzahlen bestimmen!
 
 ---
 
