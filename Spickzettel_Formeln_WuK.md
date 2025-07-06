@@ -207,7 +207,12 @@ $$P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B|A) \cdot P(A) + P(B|A^c) \cdot P(A^c)}$$
 - **Max(X,Y) bei 2 Würfeln:** P(Max=6) = 11/36, P(Max=5) = 9/36, P(Max=4) = 7/36, etc.
 - **⚠️ Gemeinheit:** Keine Formel - immer alle Fälle einzeln durchgehen!
 
-### **e) Erwartungswert/Varianz bei Würfeln (nur 21SoSe)**
+### **e) Mindestens einer zeigt bestimmte Augenzahl(en) ✅**
+**Strategie:** IMMER Gegenereignis verwenden!
+**Formel:** $P(\text{mindestens einer zeigt X}) = 1 - P(\text{keiner zeigt X})$
+- **Allgemein:** $P = 1 - \left(\frac{6-k}{6}\right)^n$ wobei k = günstige Augenzahlen, n = Anzahl Würfel
+
+### **f) Erwartungswert/Varianz bei Würfeln (nur 21SoSe)**
 **Wann:** Nur wenn explizit nach E[X] oder Var(X) gefragt wird
 **Formel:** $E[X] = \sum_{i} x_i \cdot P(X = x_i)$
 **Varianz:** $Var(X) = E[X^2] - (E[X])^2$
