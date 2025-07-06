@@ -67,20 +67,20 @@
 
 ## **Aufgabe 4: Binomialverteilung** (14 Punkte)
 
-**Gegeben:** 8 Münzwürfe, P(Kopf) = 0,5
+**Gegeben:** 8 Münzwürfe, unfaire Münze mit P(Kopf) = 1/3, P(Zahl) = 2/3
 
 ### (a) Nur Kopf
 **Formel:** P(X = k) = C(n,k) × p^k × (1-p)^(n-k)
-- **Lösung:** P(X = 8) = C(8,8) × 0,5^8 × 0,5^0 = 1 × (1/256) = **1/256**
+- **Lösung:** P(X = 8) = C(8,8) × (1/3)^8 × (2/3)^0 = 1 × (1/3)^8 = **1/6561**
 
 ### (b) Genau 4 mal Kopf
-- **Lösung:** P(X = 4) = C(8,4) × 0,5^4 × 0,5^4 = 70 × (1/256) = **70/256**
+- **Lösung:** P(X = 4) = C(8,4) × (1/3)^4 × (2/3)^4 = 70 × (1/81) × (16/81) = 70 × 16/6561 = **1120/6561**
 
 ### (c) Mindestens 2 mal Zahl
 **Strategie:** Gegenereignis: 0 oder 1 mal Zahl
-- P(0 Zahl) = P(8 Kopf) = 1/256
-- P(1 Zahl) = P(7 Kopf) = C(8,7) × 0,5^8 = 8/256
-- **Lösung:** 1 - (1/256 + 8/256) = 1 - 9/256 = **247/256**
+- P(0 Zahl) = P(8 Kopf) = (1/3)^8 = 1/6561
+- P(1 Zahl) = P(7 Kopf) = C(8,1) × (1/3)^7 × (2/3)^1 = 8 × (1/2187) × (2/3) = 16/6561
+- **Lösung:** 1 - (1/6561 + 16/6561) = 1 - 17/6561 = **6544/6561**
 
 ---
 

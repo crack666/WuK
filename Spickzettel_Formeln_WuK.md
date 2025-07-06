@@ -179,16 +179,17 @@ $$P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B|A) \cdot P(A) + P(B|A^c) \cdot P(A^c)}$$
 ### **b) Unterscheidbare vs ununterscheidbare Würfel**
 **Unterscheidbare Würfel:** 6ⁿ Möglichkeiten (n = Anzahl Würfel)
 **Ununterscheidbare Würfel:** "Stars and Bars" / Partitionen-Problem
-- **Formel:** $\binom{n+k-1}{k-1}$ wobei n = Anzahl Würfel, k = 6 (Augenzahlen)
+- **Formel:** $\binom{n+k-1}{k-1} = \binom{n+k-1}{n}$ wobei n = Anzahl Würfel, k = 6 (Augenzahlen)
 - **Beispiel 3 ununterscheidbare Würfel:** $\binom{3+6-1}{6-1} = \binom{8}{5} = 56$
-- **Alternativ:** Systematische Aufzählung aller (a,b,c) mit a ≤ b ≤ c
-  - (1,1,1), (1,1,2), (1,1,3), ..., (6,6,6)
-  - Alle Kombinationen: 56 verschiedene Ergebnisse
+- **Alternative Schreibweise:** $\binom{3+6-1}{3} = \binom{8}{3} = 56$
+- **Stars and Bars:** Verteile n identische Objekte auf k unterschiedliche Kategorien
+- **Systematische Aufzählung:** Alle (a,b,c) mit a ≤ b ≤ c: (1,1,1), (1,1,2), ..., (6,6,6)
 
 ### **c) Anzahl verschiedene Ergebnisse (SoSe20)**
 **Frage:** "Wie viele verschiedene Ergebnisse sind möglich?"
 - **Unterscheidbare Würfel:** 6ⁿ = 6³ = 216 (jeder Würfel separat betrachtet)
-- **Ununterscheidbare Würfel:** $\binom{n+5}{5}$ = $\binom{8}{5}$ = 56 (nur Kombinationen zählen)
+- **Ununterscheidbare Würfel:** $\binom{n+6-1}{6-1} = \binom{n+5}{5}$ = $\binom{8}{5}$ = 56
+- **Alternative:** $\binom{n+6-1}{n} = \binom{8}{3} = 56$ (Symmetrie-Eigenschaft)
 - **Variablen:** n = Anzahl Würfel
 - **⚠️ Gemeinheit:** Das ist Kombinatorik, nicht Wahrscheinlichkeit!
 
@@ -216,9 +217,12 @@ $$P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B|A) \cdot P(A) + P(B|A^c) \cdot P(A^c)}$$
 ## **8. MÜNZWURF-AUFGABEN**
 
 ### **Nur Kopf/Zahl**
-**Formel:** $p^n$ oder $(1-p)^n$
-- **Variablen:** n = Anzahl Würfe, p = Wahrscheinlichkeit für Kopf (meist 0.5)
-- **Beispiel:** 8 mal Kopf → n=8, p=0.5 → $0.5^8 = \frac{1}{256}$
+**Nur Kopf:** $p^n$
+**Nur Zahl:** $(1-p)^n$
+- **Variablen:** n = Anzahl Würfe, p = Wahrscheinlichkeit für Kopf
+- **Beispiel:** 8 mal nur Kopf → n=8, p=0.5 → $0.5^8 = \frac{1}{256}$
+- **Beispiel:** 8 mal nur Zahl → n=8, p=0.5 → $(1-0.5)^8 = 0.5^8 = \frac{1}{256}$
+- **⚠️ Gemeinheit:** $p^n$ ≠ $(1-p)^n$ außer bei p=0.5!
 
 ### **Genau k mal Kopf**
 **Formel:** $\binom{n}{k} \cdot p^k \cdot (1-p)^{n-k}$
