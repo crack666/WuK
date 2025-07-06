@@ -131,21 +131,25 @@ $$P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B|A) \cdot P(A) + P(B|A^c) \cdot P(A^c)}$$
 ### **c) Mindestens k Kugeln einer Farbe**
 **Strategie:** IMMER Gegenereignis verwenden!
 **Formel:** $P(X \geq k) = 1 - P(X < k) = 1 - \sum_{i=0}^{k-1} P(X = i)$
+- **Variablen:** n = Gesamtkugeln, r = gewünschte Farbe, m = gezogene Kugeln, k = Mindestanzahl
 - **Ohne Zurücklegen:** $P(X \geq k) = 1 - \sum_{i=0}^{k-1} \frac{\binom{r}{i} \cdot \binom{n-r}{m-i}}{\binom{n}{m}}$
 - **Mit Zurücklegen:** $P(X \geq k) = 1 - \sum_{i=0}^{k-1} \binom{m}{i} \cdot \left(\frac{r}{n}\right)^i \cdot \left(\frac{n-r}{n}\right)^{m-i}$
 
 ### **d) Höchstens k Kugeln einer Farbe**
 **Formel:** $P(X \leq k) = \sum_{i=0}^{k} P(X = i)$
+- **Variablen:** n = Gesamtkugeln, r = gewünschte Farbe, m = gezogene Kugeln, k = Höchstanzahl
 - **Ohne Zurücklegen:** $P(X \leq k) = \sum_{i=0}^{k} \frac{\binom{r}{i} \cdot \binom{n-r}{m-i}}{\binom{n}{m}}$
 - **Mit Zurücklegen:** $P(X \leq k) = \sum_{i=0}^{k} \binom{m}{i} \cdot \left(\frac{r}{n}\right)^i \cdot \left(\frac{n-r}{n}\right)^{m-i}$
 
 ### **e) Alle verschiedenfarbig**
 **Formel:** $\frac{\text{Anzahl Farben auswählen} \times \text{Bälle pro Farbe}}{\text{Gesamtmöglichkeiten}}$
-- **Beispiel:** 3 aus 4 Farben, je 2 Bälle → $\frac{\binom{4}{3} \times 2^3}{\binom{8}{3}} = \frac{4 \times 8}{56} = \frac{32}{56} = \frac{4}{7}$
+- **Variablen:** n = Gesamtkugeln, m = gezogene Kugeln, F = Anzahl Farben, b = Bälle pro Farbe
+- **Beispiel:** 3 aus 4 Farben, je 2 Bälle → n=8, m=3, F=4, b=2 → $\frac{\binom{4}{3} \times 2^3}{\binom{8}{3}} = \frac{4 \times 8}{56} = \frac{32}{56} = \frac{4}{7}$
 
 ### **f) Genau k gleichfarbige + Rest andersfarbig**
-**Formel:** $\frac{\text{Farbe wählen} \times \binom{\text{Bälle der Farbe}}{k} \times \text{andere Farben} \times \text{andere Bälle}}{\binom{n}{m}}$
-- **Beispiel:** 2 rote + 1 andere → $\frac{1 \times \binom{2}{2} \times 3 \times 2}{\binom{8}{3}} = \frac{1 \times 1 \times 6}{56} = \frac{6}{56}$
+**Formel:** $\frac{\text{Farben für k-Block} \times \binom{\text{Bälle der Farbe}}{k} \times \text{andere Farben} \times \text{andere Bälle}}{\binom{n}{m}}$
+- **Variablen:** n = Gesamtkugeln, m = gezogene Kugeln, k = Anzahl gleichfarbige, F = Anzahl Farben, b = Bälle pro Farbe
+- **Beispiel:** 2 rote + 1 andere → n=8, m=3, k=2, F=4, b=2 → $\frac{1 \times \binom{2}{2} \times 3 \times 2}{\binom{8}{3}} = \frac{1 \times 1 \times 6}{56} = \frac{6}{56}$
 
 **Konkrete Beispiele aus Klausuren:**
 - **SS14 Aufgabe 3c:** "Mindestens 1 roter Ball" → P = 1 - P(kein roter) = 1 - $\frac{\binom{6}{3}}{\binom{8}{3}}$ = 1 - $\frac{20}{56}$ = $\frac{36}{56} = \frac{9}{14}$
@@ -155,7 +159,35 @@ $$P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B|A) \cdot P(A) + P(B|A^c) \cdot P(A^c)}$$
 ---
 
 ## **7. WÜRFEL-AUFGABEN**
-**Vorgehen:** Alle möglichen Werte auflisten, Wahrscheinlichkeiten berechnen
+**Vorgehen:** Alle möglichen Werte systematisch auflisten, Wahrscheinlichkeiten berechnen
+
+### **a) Häufigste Augensumme bei 2 Würfeln**
+**Methode:** Systematische Aufzählung aller 36 Kombinationen
+- **Summe 2:** (1,1) → 1 Weg → P = 1/36
+- **Summe 3:** (1,2), (2,1) → 2 Wege → P = 2/36
+- **Summe 4:** (1,3), (2,2), (3,1) → 3 Wege → P = 3/36
+- **Summe 5:** (1,4), (2,3), (3,2), (4,1) → 4 Wege → P = 4/36
+- **Summe 6:** (1,5), (2,4), (3,3), (4,2), (5,1) → 5 Wege → P = 5/36
+- **Summe 7:** (1,6), (2,5), (3,4), (4,3), (5,2), (6,1) → 6 Wege → P = 6/36 ⭐
+- **Summe 8:** (2,6), (3,5), (4,4), (5,3), (6,2) → 5 Wege → P = 5/36
+- **Summe 9:** (3,6), (4,5), (5,4), (6,3) → 4 Wege → P = 4/36
+- **Summe 10:** (4,6), (5,5), (6,4) → 3 Wege → P = 3/36
+- **Summe 11:** (5,6), (6,5) → 2 Wege → P = 2/36
+- **Summe 12:** (6,6) → 1 Weg → P = 1/36
+**Antwort:** Summe 7 ist am häufigsten mit P = 6/36 = 1/6
+
+### **b) Unterscheidbare vs ununterscheidbare Würfel**
+**Unterscheidbare Würfel:** 6ⁿ Möglichkeiten (n = Anzahl Würfel)
+**Ununterscheidbare Würfel:** Multinomialkoeffizient verwenden
+- **Formel:** $\frac{n!}{n_1! \cdot n_2! \cdot ... \cdot n_6!}$ wobei n₁...n₆ = Anzahl der jeweiligen Augenzahlen
+- **Beispiel:** 3 ununterscheidbare Würfel → alle Kombinationen wie (1,1,1), (1,1,2), (1,2,3), etc. einzeln zählen
+
+### **c) Min/Max bei mehreren Würfeln**
+**Methode:** Systematische Aufzählung nach Werten
+- **Min(X,Y) bei 2 Würfeln:** P(Min=1) = 11/36, P(Min=2) = 9/36, P(Min=3) = 7/36, etc.
+- **Max(X,Y) bei 2 Würfeln:** P(Max=6) = 11/36, P(Max=5) = 9/36, P(Max=4) = 7/36, etc.
+- **⚠️ Gemeinheit:** Keine Formel - immer alle Fälle einzeln durchgehen!
+
 ### **Wahrscheinlichkeitsfunktion**
 **Konkrete Beispiele aus Klausuren:**
 - **Min(X,Y) bei 2 Würfeln:** P(Min=1) = 11/36, P(Min=2) = 9/36, P(Min=3) = 7/36, etc.
