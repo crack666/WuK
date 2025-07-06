@@ -118,15 +118,39 @@ $$P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B|A) \cdot P(A) + P(B|A^c) \cdot P(A^c)}$$
 
 ## **6. URNEN-AUFGABEN**
 
-### **Ohne Zurücklegen:**
-**Formel:** $\frac{\binom{r}{k} \cdot \binom{n-r}{m-k}}{\binom{n}{m}}$
+### **a) Ohne Zurücklegen (Hypergeometrische Verteilung)**
+**Grundformel:** $P(X = k) = \frac{\binom{r}{k} \cdot \binom{n-r}{m-k}}{\binom{n}{m}}$
 - **Variablen:** n = Gesamtkugeln, r = gewünschte Farbe, m = gezogene Kugeln, k = gewünschte aus r
-- **Beispiel:** 2 rote aus 3, 2 Bälle gesamt → n=10, r=3, m=2, k=2 → $\frac{\binom{3}{2} \cdot \binom{7}{0}}{\binom{10}{2}} = \frac{3}{45}$
+- **Beispiel:** Genau 2 rote aus 3, 2 Bälle gesamt → n=10, r=3, m=2, k=2 → $\frac{\binom{3}{2} \cdot \binom{7}{0}}{\binom{10}{2}} = \frac{3}{45}$
 
-### **Mit Zurücklegen:**
-**Formel:** $\binom{m}{k} \cdot \left(\frac{r}{n}\right)^k \cdot \left(\frac{n-r}{n}\right)^{m-k}$
+### **b) Mit Zurücklegen (Binomialverteilung)**
+**Grundformel:** $P(X = k) = \binom{m}{k} \cdot \left(\frac{r}{n}\right)^k \cdot \left(\frac{n-r}{n}\right)^{m-k}$
 - **Variablen:** n = Gesamtkugeln, r = gewünschte Farbe, m = Ziehungen, k = gewünschte Treffer
-- **Beispiel:** 2 rote aus 3, 2 Ziehungen → n=10, r=3, m=2, k=2 → $\binom{2}{2} \cdot (0.3)^2 = 0.09$
+- **Beispiel:** Genau 2 rote aus 3, 2 Ziehungen → n=10, r=3, m=2, k=2 → $\binom{2}{2} \cdot (0.3)^2 = 0.09$
+
+### **c) Mindestens k Kugeln einer Farbe**
+**Strategie:** IMMER Gegenereignis verwenden!
+**Formel:** $P(X \geq k) = 1 - P(X < k) = 1 - \sum_{i=0}^{k-1} P(X = i)$
+- **Ohne Zurücklegen:** $P(X \geq k) = 1 - \sum_{i=0}^{k-1} \frac{\binom{r}{i} \cdot \binom{n-r}{m-i}}{\binom{n}{m}}$
+- **Mit Zurücklegen:** $P(X \geq k) = 1 - \sum_{i=0}^{k-1} \binom{m}{i} \cdot \left(\frac{r}{n}\right)^i \cdot \left(\frac{n-r}{n}\right)^{m-i}$
+
+### **d) Höchstens k Kugeln einer Farbe**
+**Formel:** $P(X \leq k) = \sum_{i=0}^{k} P(X = i)$
+- **Ohne Zurücklegen:** $P(X \leq k) = \sum_{i=0}^{k} \frac{\binom{r}{i} \cdot \binom{n-r}{m-i}}{\binom{n}{m}}$
+- **Mit Zurücklegen:** $P(X \leq k) = \sum_{i=0}^{k} \binom{m}{i} \cdot \left(\frac{r}{n}\right)^i \cdot \left(\frac{n-r}{n}\right)^{m-i}$
+
+### **e) Alle verschiedenfarbig**
+**Formel:** $\frac{\text{Anzahl Farben auswählen} \times \text{Bälle pro Farbe}}{\text{Gesamtmöglichkeiten}}$
+- **Beispiel:** 3 aus 4 Farben, je 2 Bälle → $\frac{\binom{4}{3} \times 2^3}{\binom{8}{3}} = \frac{4 \times 8}{56} = \frac{32}{56} = \frac{4}{7}$
+
+### **f) Genau k gleichfarbige + Rest andersfarbig**
+**Formel:** $\frac{\text{Farbe wählen} \times \binom{\text{Bälle der Farbe}}{k} \times \text{andere Farben} \times \text{andere Bälle}}{\binom{n}{m}}$
+- **Beispiel:** 2 rote + 1 andere → $\frac{1 \times \binom{2}{2} \times 3 \times 2}{\binom{8}{3}} = \frac{1 \times 1 \times 6}{56} = \frac{6}{56}$
+
+**Konkrete Beispiele aus Klausuren:**
+- **SS14 Aufgabe 3c:** "Mindestens 1 roter Ball" → P = 1 - P(kein roter) = 1 - $\frac{\binom{6}{3}}{\binom{8}{3}}$ = 1 - $\frac{20}{56}$ = $\frac{36}{56} = \frac{9}{14}$
+- **WS0607 Aufgabe 3:** "2 gleichfarbige ohne Zurücklegen" → P = $\frac{6}{90} + \frac{2}{90} + \frac{20}{90} = \frac{28}{90} = \frac{14}{45}$
+- **⚠️ Gemeinheit:** Bei "mindestens" IMMER Gegenereignis berechnen - spart Zeit!
 
 ---
 
