@@ -178,30 +178,38 @@ $$P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B|A) \cdot P(A) + P(B|A^c) \cdot P(A^c)}$$
 
 ### **b) Unterscheidbare vs ununterscheidbare Würfel**
 **Unterscheidbare Würfel:** 6ⁿ Möglichkeiten (n = Anzahl Würfel)
-**Ununterscheidbare Würfel:** Multinomialkoeffizient verwenden
-- **Formel:** $\frac{n!}{n_1! \cdot n_2! \cdot ... \cdot n_6!}$ wobei n₁...n₆ = Anzahl der jeweiligen Augenzahlen
-- **Beispiel:** 3 ununterscheidbare Würfel → alle Kombinationen wie (1,1,1), (1,1,2), (1,2,3), etc. einzeln zählen
+**Ununterscheidbare Würfel:** "Stars and Bars" / Partitionen-Problem
+- **Formel:** $\binom{n+k-1}{k-1}$ wobei n = Anzahl Würfel, k = 6 (Augenzahlen)
+- **Beispiel 3 ununterscheidbare Würfel:** $\binom{3+6-1}{6-1} = \binom{8}{5} = 56$
+- **Alternativ:** Systematische Aufzählung aller (a,b,c) mit a ≤ b ≤ c
+  - (1,1,1), (1,1,2), (1,1,3), ..., (6,6,6)
+  - Alle Kombinationen: 56 verschiedene Ergebnisse
 
-### **c) Min/Max bei mehreren Würfeln**
+### **c) Anzahl verschiedene Ergebnisse (SoSe20)**
+**Frage:** "Wie viele verschiedene Ergebnisse sind möglich?"
+- **Unterscheidbare Würfel:** 6ⁿ = 6³ = 216 (jeder Würfel separat betrachtet)
+- **Ununterscheidbare Würfel:** $\binom{n+5}{5}$ = $\binom{8}{5}$ = 56 (nur Kombinationen zählen)
+- **Variablen:** n = Anzahl Würfel
+- **⚠️ Gemeinheit:** Das ist Kombinatorik, nicht Wahrscheinlichkeit!
+
+### **d) Min/Max bei mehreren Würfeln**
 **Methode:** Systematische Aufzählung nach Werten
 - **Min(X,Y) bei 2 Würfeln:** P(Min=1) = 11/36, P(Min=2) = 9/36, P(Min=3) = 7/36, etc.
 - **Max(X,Y) bei 2 Würfeln:** P(Max=6) = 11/36, P(Max=5) = 9/36, P(Max=4) = 7/36, etc.
 - **⚠️ Gemeinheit:** Keine Formel - immer alle Fälle einzeln durchgehen!
 
-### **Wahrscheinlichkeitsfunktion**
+### **e) Erwartungswert/Varianz bei Würfeln (nur 21SoSe)**
+**Wann:** Nur wenn explizit nach E[X] oder Var(X) gefragt wird
+**Formel:** $E[X] = \sum_{i} x_i \cdot P(X = x_i)$
+**Varianz:** $Var(X) = E[X^2] - (E[X])^2$
+- **Beispiel:** E[Min] = 1·(11/36) + 2·(9/36) + 3·(7/36) + 4·(5/36) + 5·(3/36) + 6·(1/36) = 91/36
+- **⚠️ Gemeinheit:** Kommt nur in neueren Klausuren vor, nicht in Standard-Würfel-Aufgaben!
+
 **Konkrete Beispiele aus Klausuren:**
+- **SoSe20 Aufgabe 3:** "Wie viele verschiedene Ergebnisse?" → Unterscheidbar: 216, Ununterscheidbar: 56
 - **Min(X,Y) bei 2 Würfeln:** P(Min=1) = 11/36, P(Min=2) = 9/36, P(Min=3) = 7/36, etc.
 - **Summe bei 2 Würfeln:** P(Summe=7) = 6/36 (höchste Wahrscheinlichkeit), P(Summe=2) = 1/36
-- **Drei Würfel unterscheidbar vs ununterscheidbar:** Unterscheidbar = 6³ = 216, ununterscheidbar = andere Formel
-- **⚠️ Gemeinheit:** Unterscheidbare vs ununterscheidbare Würfel komplett andere Rechnung!
-
-### **Erwartungswert**
-**Formel:** $E[X] = \sum_{i} x_i \cdot P(X = x_i)$
-- **Beispiel:** E[Min] = 1·(11/36) + 2·(9/36) + 3·(7/36) + 4·(5/36) + 5·(3/36) + 6·(1/36) = 91/36
-
-### **Varianz/Standardabweichung**
-**Formel:** $Var(X) = E[X^2] - (E[X])^2$
-**Standardabweichung:** $\sigma = \sqrt{Var(X)}$
+- **⚠️ Gemeinheit:** Bei "Anzahl Ergebnisse" → Kombinatorik! Bei "Wahrscheinlichkeit" → Systematische Aufzählung!
 
 ---
 
