@@ -74,6 +74,13 @@
 **Formel:** $\frac{k \cdot (k-1)^{n-1}}{k^n}$
 - **⚠️ Gemeinheit:** Andere dürfen nicht im gleichen Stockwerk!
 
+### **e) Genau r Stockwerke benutzt mit bestimmter Verteilung ✅**
+**Formel:** $P = \frac{\binom{k}{r} \cdot M \cdot \frac{n!}{n_1! \cdot n_2! \cdots n_r!}}{k^n}$
+- **Variablen:** n = Anzahl Personen, k = Anzahl Stockwerke, r = benutzte Stockwerke (wie oft hält der Fahrstuhl an), $n_i$ = Personen pro Stockwerk, M = Unterscheidbare Gruppengrößen
+- **Bedingung:** $\sum_{i=1}^{r} n_i = n$ (alle Personen verteilt)
+- **Beispiel:** 4 Personen, 3 Stockwerke, genau 2 Stockwerke benutzt, je 2 Personen → $P = \frac{\binom{3}{2} \cdot \frac{4!}{2! \cdot 2!}}{3^4} = \frac{3 \cdot 6}{81} = \frac{2}{9}$
+- **⚠️ Gemeinheit:** Sehr mächtige Formel für komplexe Verteilungen!
+
 ---
 
 ## **4. SCHÜTZEN/TREFFER-AUFGABEN**
@@ -185,7 +192,7 @@ $$P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B|A) \cdot P(A) + P(B|A^c) \cdot P(A^c)}$$
 - **Stars and Bars:** Verteile n identische Objekte auf k unterschiedliche Kategorien
 - **Systematische Aufzählung:** Alle (a,b,c) mit a ≤ b ≤ c: (1,1,1), (1,1,2), ..., (6,6,6)
 
-### **c) Anzahl verschiedene Ergebnisse (SoSe20)**
+### **c) Anzahl verschiedene Ergebnisse (SoSe20) ✅**
 **Frage:** "Wie viele verschiedene Ergebnisse sind möglich?"
 - **Unterscheidbare Würfel:** 6ⁿ = 6³ = 216 (jeder Würfel separat betrachtet)
 - **Ununterscheidbare Würfel:** $\binom{n+k-1}{k-1}$ wobei n=3 (Würfel), k=6 (Augenzahlen)
