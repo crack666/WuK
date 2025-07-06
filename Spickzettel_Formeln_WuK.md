@@ -65,12 +65,12 @@
 - **Variablen:** n = Anzahl Personen, k = Anzahl Stockwerke
 - **Beispiel:** Hält 3-mal → n=3, k=4 → $\frac{4 \cdot 3 \cdot 2}{4^3} = \frac{24}{64} = \frac{3}{8}$
 
-### **c) Gemeinsames Aussteigen**
+### **c) Gemeinsames Aussteigen ✅**
 **Formel:** $\frac{k \cdot \binom{n}{m}}{k^n}$ (m Personen zusammen)
 - **Variablen:** n = Anzahl Personen gesamt, k = Stockwerke, m = Personen die zusammen aussteigen
 - **Beispiel:** A,B zusammen → n=3, k=4, m=2 → $\frac{4 \cdot 4}{4^3} = \frac{16}{64} = \frac{1}{4}$
 
-### **d) Alleine aussteigen**
+### **d) Alleine aussteigen ✅**
 **Formel:** $\frac{k \cdot (k-1)^{n-1}}{k^n}$
 - **⚠️ Gemeinheit:** Andere dürfen nicht im gleichen Stockwerk!
 
@@ -176,7 +176,7 @@ $$P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B|A) \cdot P(A) + P(B|A^c) \cdot P(A^c)}$$
 - **Summe 12:** (6,6) → 1 Weg → P = 1/36
 **Antwort:** Summe 7 ist am häufigsten mit P = 6/36 = 1/6
 
-### **b) Unterscheidbare vs ununterscheidbare Würfel**
+### **b) Unterscheidbare vs ununterscheidbare Würfel ✅**
 **Unterscheidbare Würfel:** 6ⁿ Möglichkeiten (n = Anzahl Würfel)
 **Ununterscheidbare Würfel:** "Stars and Bars" / Partitionen-Problem
 - **Formel:** $\binom{n+k-1}{k-1} = \binom{n+k-1}{n}$ wobei n = Anzahl Würfel, k = 6 (Augenzahlen)
@@ -188,9 +188,10 @@ $$P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B|A) \cdot P(A) + P(B|A^c) \cdot P(A^c)}$$
 ### **c) Anzahl verschiedene Ergebnisse (SoSe20)**
 **Frage:** "Wie viele verschiedene Ergebnisse sind möglich?"
 - **Unterscheidbare Würfel:** 6ⁿ = 6³ = 216 (jeder Würfel separat betrachtet)
-- **Ununterscheidbare Würfel:** $\binom{n+6-1}{6-1} = \binom{n+5}{5}$ = $\binom{8}{5}$ = 56
-- **Alternative:** $\binom{n+6-1}{n} = \binom{8}{3} = 56$ (Symmetrie-Eigenschaft)
-- **Variablen:** n = Anzahl Würfel
+- **Ununterscheidbare Würfel:** $\binom{n+k-1}{k-1}$ wobei n=3 (Würfel), k=6 (Augenzahlen)
+- **Einsetzen:** $\binom{3+6-1}{6-1} = \binom{8}{5} = 56$
+- **Alternative:** $\binom{n+k-1}{n} = \binom{8}{3} = 56$ (Symmetrie-Eigenschaft)
+- **Variablen:** n = Anzahl Würfel, k = Anzahl verschiedene Augenzahlen (1-6)
 - **⚠️ Gemeinheit:** Das ist Kombinatorik, nicht Wahrscheinlichkeit!
 
 ### **d) Min/Max bei mehreren Würfeln**
