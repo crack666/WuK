@@ -1,5 +1,8 @@
 # 📚 WuK - Wahrscheinlichkeitsrechnung und Kryptographie
 
+![Image 1](image1.png)
+![Image 2](image2.png)
+
 Materialsammlung für das Studium der Wahrscheinlichkeitsrechnung und Kryptographie mit Fokus auf effiziente Klausurvorbereitung.
 
 ## 📂 Repository-Struktur
