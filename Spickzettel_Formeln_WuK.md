@@ -92,11 +92,13 @@
 
 ### **Mindestens/höchstens Treffer**
 **Mindestens k:** $P(X \geq k) = 1 - P(X < k) = 1 - \sum_{i=0}^{k-1} \binom{n}{i} p^i (1-p)^{n-i}$
+
 **Höchstens k:** $P(X \leq k) = \sum_{i=0}^{k} \binom{n}{i} p^i (1-p)^{n-i}$
 
 ### **Kombinierte Wahrscheinlichkeiten**
 **Formel:** Multiplikation bei Unabhängigkeit, Addition bei Ausschluss
 - **⚠️ Gemeinheit:** Prüfe ob Ereignisse unabhängig oder abhängig!
+
 **Konkrete Beispiele aus Klausuren:**
 - **3 Schützen gleichzeitig:** P(mindestens 1 trifft) = 1 - P(alle verfehlen) = 1 - 0.5×0.7×0.8
 - **Tennis-Match:** Anne gewinnt 2 von 4 Sätzen → $\binom{4}{2} \cdot (2/3)^2 \cdot (1/3)^2$
@@ -185,6 +187,7 @@ $$P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B|A) \cdot P(A) + P(B|A^c) \cdot P(A^c)}$$
 
 ### **b) Unterscheidbare vs ununterscheidbare Würfel**
 **Unterscheidbare Würfel:** $6^n$ Möglichkeiten (n = Anzahl Würfel)
+
 **Ununterscheidbare Würfel:** $\binom{n+5}{5}$ ("Stars and Bars")
 - **Beispiel 3 Würfel:** $\binom{3+5}{5} = \binom{8}{5} = 56$
 - **Variablen:** n = Anzahl Würfel
@@ -233,7 +236,9 @@ $$P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B|A) \cdot P(A) + P(B|A^c) \cdot P(A^c)}$$
 
 ### **h) Erwartungswert/Varianz bei Würfeln (nur 21SoSe)**
 **Wann:** Nur wenn explizit nach E[X] oder Var(X) gefragt wird
+
 **Formel:** $E[X] = \sum_{i} x_i \cdot P(X = x_i)$
+
 **Varianz:** $Var(X) = E[X^2] - (E[X])^2$
 - **Beispiel:** E[Min] = 1·(11/36) + 2·(9/36) + 3·(7/36) + 4·(5/36) + 5·(3/36) + 6·(1/36) = 91/36
 - **⚠️ Gemeinheit:** Kommt nur in neueren Klausuren vor, nicht in Standard-Würfel-Aufgaben!
@@ -285,6 +290,7 @@ $$P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B|A) \cdot P(A) + P(B|A^c) \cdot P(A^c)}$$
 
 ### **Standardabweichung**
 **Formel:** $Var(X) = \int_{-\infty}^{\infty} x^2 \cdot f(x) dx - (E[X])^2$
+
 **Standardabweichung:** $\sigma = \sqrt{Var(X)}$
 
 ### **Wahrscheinlichkeiten berechnen**
