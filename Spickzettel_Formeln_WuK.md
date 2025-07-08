@@ -48,7 +48,7 @@
 **Konkrete Beispiele aus Klausuren:**
 - **Rosen-Aufgabe:** 6 Rosen, 4 Farben, "jede Farbe mindestens 1" → Inklusion-Exklusion
 - **Schachbrett:** n ununterscheidbare Türme auf n×n Brett → Permutationsmatrix → n!
-- **ODER-Bedingung:** "erste ODER zweite Aufgabe" → $\binom{9}{6}$ + $\binom{9}{6}$ (nicht beide gleichzeitig)
+- **ODER-Bedingung:** "erste ODER zweite Aufgabe" → $\binom{8}{5}$ + $\binom{8}{5}$ (nicht beide gleichzeitig bei 7 aus 10)
 - **⚠️ Gemeinheit:** "mindestens" vs "genau" vs "höchstens" gut unterscheiden!
 
 ---
