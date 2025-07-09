@@ -3,6 +3,18 @@
 ![Image 1](image1.png)
 ![Image 2](image2.png)
 
+---
+
+## ✍️ Handgeschriebene Übersicht
+
+![Handwritten](handwritten.png)
+
+👉 [Download als PNG](./handwritten.png)
+
+*Die Datei "handwritten.png" enthält eine handschriftliche Zusammenfassung wichtiger Formeln und Strategien. Nutzung für die Klausur vorgesehen. ABER: bisher
+ohne Affine Chiffre, Modulare Arithmetik (Eulersches Theorem) und Stetige Zufallsvariablen (Erwartungswert, Normierungskonstante C, Standardabweichung)*
+---
+
 Materialsammlung für das Studium der Wahrscheinlichkeitsrechnung und Kryptographie mit Fokus auf effiziente Klausurvorbereitung.
 
 ## 📂 Repository-Struktur
