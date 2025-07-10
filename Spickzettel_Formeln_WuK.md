@@ -65,18 +65,23 @@
 
 ### **b) Bestimmte Personen sitzen zusammen (Block-Bildung)**
 **Vorgehen:** Zusammensitzende als EINE Einheit behandeln
-**Formel:** $(m-1)! \times k!$ 
-- **Variablen:** m = Anzahl Einheiten (Blöcke + Einzelpersonen), k = Personen im Block
-- **Beispiel:** 3 Mädchen zusammen, 3 Jungen einzeln → m=4 Einheiten → $(4-1)! \times 3! = 3! \times 3! = 36$
-- **Bei linearer Reihe:** $\frac{(m-1)! \times k!}{n!}$ als Wahrscheinlichkeit (wenn Gesamtanzahl n! ist)
 
-### **c) Abwechselnde Sitzordnung (z.B. Jungen/Mädchen)**
+**Allgemeine Formel:** $(m-1)! \times \prod_{i=1}^{b} k_i!$ 
+- **Variablen:** m = Anzahl Einheiten (Blöcke + Einzelpersonen), b = Anzahl Blöcke, $k_i$ = Personen in Block i
+- **Einfacher Fall (1 Block):** $(m-1)! \times k!$ wobei m = (n-k+1), k = Personen im Block
+- **Beispiel:** 3 Mädchen zusammen, 3 Jungen einzeln → m=4 Einheiten, k=3 → $(4-1)! \times 3! = 3! \times 3! = 36$
+- **Bei linearer Reihe:** $\frac{(m-1)! \times k!}{n!}$ als Wahrscheinlichkeit
+- **Mehrere Blöcke:** Jeder Block wird separat mit seiner Fakultät multipliziert
+
+### **c) Abwechselnde Sitzordnung (p Gruppen, je n Personen)**
 **Vorgehen:** Muster fixieren, dann Gruppen permutieren
-**Formel:** $2 \times (a-1)! \times (b-1)!$ (runder Tisch) oder $2 \times a! \times b!$ (lineare Reihe)
-- **Variablen:** a,b = Anzahl Personen der beiden Gruppen (gleich groß!)
-- **Faktor 2:** JMJMJM oder MJMJMJ möglich
-- **Beispiel:** 3 Jungen, 3 Mädchen abwechselnd → $2 \times 3! \times 3! = 2 \times 36 = 72$
+
+**Allgemeine Formel:** $p! \times (n!)^p$ (lineare Reihe) oder $p \times (n-1)! \times (n!)^{p-1}$ (runder Tisch)
+- **Variablen:** n = Personen pro Gruppe, p = Anzahl Gruppen (alle gleich groß!)
+- **Spezialfall 2 Gruppen:** $2 \times (n-1)! \times (n!)^1 = 2 \times (n-1)! \times n!$ (runder Tisch)
+- **Beispiel:** 3 Jungen, 3 Mädchen abwechselnd → p=2, n=3 → $2 \times 3! \times 3! = 72$
 - **Als Wahrscheinlichkeit:** $\frac{72}{6!} = \frac{72}{720} = \frac{1}{10}$
+- **⚠️ Wichtig:** Nur bei gleicher Gruppengröße anwendbar!
 
 ### **d) Bestimmte Personen sitzen NICHT zusammen**
 **Strategie:** IMMER Komplement verwenden! 
@@ -88,15 +93,17 @@
 - **WS0809 Aufgabe 3b:** "Jungen/Mädchen abwechselnd" → $\frac{2 \times 3! \times 3!}{6!} = \frac{72}{720} = \frac{1}{10}$
 - **21SoSe Aufgabe 1d:** "Drei T nebeneinander" → Block-Behandlung: $(TTT),A,E,E$ → $\frac{4!}{2!} = 12$
 
-### **f) Sektoren-Aufteilung (3 Parteien, je n Personen)**
-**Szenario:** 3n Personen, 3 Parteien, jede Partei bekommt zusammenhängenden Sektor
-**Formel:** $n \times 3! \times (n!)^3$
-- **Variablen:** n = Personen pro Partei, 3 = Anzahl Parteien
+### **f) Sektoren-Aufteilung (p Parteien, je n Personen)**
+**Szenario:** p×n Personen, p Parteien, jede Partei bekommt zusammenhängenden Sektor
+
+**Allgemeine Formel:** $n \times p! \times (n!)^p$
+- **Variablen:** n = Personen pro Partei, p = Anzahl Parteien
 - **Aufschlüsselung:**
   - $n$ = Möglichkeiten, ersten Sektor zu platzieren (Rotation)
-  - $3! = 6$ = Zuordnung der 3 Parteien zu den 3 Sektoren  
-  - $(n!)^3$ = Permutationen innerhalb jeder Partei
-- **Beispiel:** 3 Parteien à 4 Personen → $4 \times 6 \times (4!)^3 = 4 \times 6 \times 13824 = 331776$
+  - $p!$ = Zuordnung der p Parteien zu den p Sektoren  
+  - $(n!)^p$ = Permutationen innerhalb jeder Partei
+- **Beispiel:** 3 Parteien à 4 Personen → $4 \times 3! \times (4!)^3 = 4 \times 6 \times 13824 = 331776$
+- **Spezialfall 2 Parteien:** $n \times 2! \times (n!)^2 = 2n \times (n!)^2$
 - **⚠️ Unterschied:** Das ist NICHT abwechselnde Sitzordnung, sondern Block-Aufteilung!
 
 ### **🎯 KLAUSUR-TRICKS:**
@@ -104,6 +111,13 @@
 - **Block-Behandlung:** Immer Permutation INNERHALB des Blocks nicht vergessen
 - **Wahrscheinlichkeitsrechnung:** $\frac{\text{günstige Fälle}}{\text{Gesamtfälle}}$ 
 - **Bei "zusammen":** Block als Einheit, bei "abwechselnd": Muster zählen
+
+### **🔧 ALLGEMEINE VARIABLEN-NOTATION:**
+- **n** = Personen pro Gruppe/Partei (falls alle Gruppen gleich groß)
+- **p** = Anzahl Parteien/Gruppen  
+- **m** = Anzahl Einheiten (nach Block-Bildung)
+- **k, $k_i$** = Personen in Block i
+- **b** = Anzahl verschiedener Blöcke
 
 ---
 
