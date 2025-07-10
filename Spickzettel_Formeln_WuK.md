@@ -76,12 +76,21 @@
 ### **c) Abwechselnde Sitzordnung (p Gruppen, je n Personen)**
 **Vorgehen:** Muster fixieren, dann Gruppen permutieren
 
-**Allgemeine Formel:** $p! \times (n!)^p$ (lineare Reihe) oder $p \times (n-1)! \times (n!)^{p-1}$ (runder Tisch)
+**Formel (runder Tisch):** $(n-1)! \times (n!)^{p-1}$ 
 - **Variablen:** n = Personen pro Gruppe, p = Anzahl Gruppen (alle gleich groß!)
-- **Spezialfall 2 Gruppen:** $2 \times (n-1)! \times (n!)^1 = 2 \times (n-1)! \times n!$ (runder Tisch)
-- **Beispiel:** 3 Jungen, 3 Mädchen abwechselnd → p=2, n=3 → $2 \times 3! \times 3! = 72$
-- **Als Wahrscheinlichkeit:** $\frac{72}{6!} = \frac{72}{720} = \frac{1}{10}$
-- **⚠️ Wichtig:** Nur bei gleicher Gruppengröße anwendbar!
+- **Grund:** Bei rundem Tisch eine Gruppe fixieren → $(n-1)!$, andere Gruppen frei → $(n!)^{p-1}$
+
+**Spezialfälle (alle runder Tisch):**
+- **2 Gruppen:** $(n-1)! \times n!$ 
+- **3 Gruppen:** $(n-1)! \times (n!)^2$
+- **Beispiel A,B,C,A,B,C,...:** p=3, n=2 → $(2-1)! \times (2!)^2 = 1! \times 4 = 4$
+
+**Konkrete Klausur-Beispiele:**
+- **J,M,J,M,J,M:** p=2, n=3 → $(3-1)! \times 3! = 2! \times 6 = 12$ 
+- **A,B,C,A,B,C:** p=3, n=2 → $(2-1)! \times (2!)^2 = 1 \times 4 = 4$
+- **Als Wahrscheinlichkeit:** $\frac{\text{günstige Fälle}}{(pn-1)!}$
+
+**⚠️ Lineare Reihe kommt NICHT in Klausuren vor!** - Nur zur Vollständigkeit: $p \times (n!)^p$
 
 ### **d) Bestimmte Personen sitzen NICHT zusammen**
 **Strategie:** IMMER Komplement verwenden! 
@@ -107,10 +116,11 @@
 - **⚠️ Unterschied:** Das ist NICHT abwechselnde Sitzordnung, sondern Block-Aufteilung!
 
 ### **🎯 KLAUSUR-TRICKS:**
-- **Runder vs linearer Tisch:** Faktor $(n-1)$ Unterschied!
+- **Runder Tisch = Standard!** Lineare Reihen kommen praktisch nicht vor
 - **Block-Behandlung:** Immer Permutation INNERHALB des Blocks nicht vergessen
-- **Wahrscheinlichkeitsrechnung:** $\frac{\text{günstige Fälle}}{\text{Gesamtfälle}}$ 
+- **Wahrscheinlichkeitsrechnung:** $\frac{\text{günstige Fälle}}{(pn-1)!}$ bei rundem Tisch
 - **Bei "zusammen":** Block als Einheit, bei "abwechselnd": Muster zählen
+- **Fixiere immer eine Gruppe:** Das eliminiert die Rotations-Symmetrie
 
 ### **🔧 ALLGEMEINE VARIABLEN-NOTATION:**
 - **n** = Personen pro Gruppe/Partei (falls alle Gruppen gleich groß)
