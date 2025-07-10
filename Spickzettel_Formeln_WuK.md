@@ -1,6 +1,8 @@
 # 🎯 SPICKZETTEL: Formeln & Lösungsansätze WuK
 
-## **1. KOMBINATORIK - BUCHSTABEN/ZIFFERN-ANORDNUNGEN**
+## **## **4. FAHRSTUHL-AUFGABEN**
+
+### **a) Fahrstuhl hält nur einmal**KOMBINATORIK - BUCHSTABEN/ZIFFERN-ANORDNUNGEN**
 
 ### **a) Anzahl unterscheidbare Anordnungen**
 **Formel:** $\frac{n!}{n_1! \cdot n_2! \cdot ... \cdot n_k!}$
@@ -53,7 +55,59 @@
 
 ---
 
-## **3. FAHRSTUHL-AUFGABEN**
+## **3. RUNDER TISCH / KREIS-PERMUTATIONEN & SITZORDNUNGEN**
+
+### **a) Grundformel für runden Tisch**
+**Formel:** $(n-1)!$ (ein Objekt fixiert, Rest permutiert)
+- **Variablen:** n = Anzahl Personen/Objekte
+- **Grund:** Bei kreisförmiger Anordnung sind Rotationen identisch → eine Position fixieren
+- **Beispiel:** 6 Personen am runden Tisch → $(6-1)! = 5! = 120$
+
+### **b) Bestimmte Personen sitzen zusammen (Block-Bildung)**
+**Vorgehen:** Zusammensitzende als EINE Einheit behandeln
+**Formel:** $(m-1)! \times k!$ 
+- **Variablen:** m = Anzahl Einheiten (Blöcke + Einzelpersonen), k = Personen im Block
+- **Beispiel:** 3 Mädchen zusammen, 3 Jungen einzeln → m=4 Einheiten → $(4-1)! \times 3! = 3! \times 3! = 36$
+- **Bei linearer Reihe:** $\frac{(m-1)! \times k!}{n!}$ als Wahrscheinlichkeit (wenn Gesamtanzahl n! ist)
+
+### **c) Abwechselnde Sitzordnung (z.B. Jungen/Mädchen)**
+**Vorgehen:** Muster fixieren, dann Gruppen permutieren
+**Formel:** $2 \times (a-1)! \times (b-1)!$ (runder Tisch) oder $2 \times a! \times b!$ (lineare Reihe)
+- **Variablen:** a,b = Anzahl Personen der beiden Gruppen (gleich groß!)
+- **Faktor 2:** JMJMJM oder MJMJMJ möglich
+- **Beispiel:** 3 Jungen, 3 Mädchen abwechselnd → $2 \times 3! \times 3! = 2 \times 36 = 72$
+- **Als Wahrscheinlichkeit:** $\frac{72}{6!} = \frac{72}{720} = \frac{1}{10}$
+
+### **d) Bestimmte Personen sitzen NICHT zusammen**
+**Strategie:** IMMER Komplement verwenden! 
+**Formel:** Gesamtmöglichkeiten - "sitzen zusammen"
+- **Beispiel:** A und B sitzen NICHT nebeneinander → $(n-1)! - 2 \times (n-2)!$
+
+### **e) Konkrete Klausur-Beispiele**
+- **WS0809 Aufgabe 3a:** "3 Mädchen sitzen zusammen" → $\frac{4! \times 3!}{6!} = \frac{144}{720} = \frac{1}{5}$
+- **WS0809 Aufgabe 3b:** "Jungen/Mädchen abwechselnd" → $\frac{2 \times 3! \times 3!}{6!} = \frac{72}{720} = \frac{1}{10}$
+- **21SoSe Aufgabe 1d:** "Drei T nebeneinander" → Block-Behandlung: $(TTT),A,E,E$ → $\frac{4!}{2!} = 12$
+
+### **f) Sektoren-Aufteilung (3 Parteien, je n Personen)**
+**Szenario:** 3n Personen, 3 Parteien, jede Partei bekommt zusammenhängenden Sektor
+**Formel:** $n \times 3! \times (n!)^3$
+- **Variablen:** n = Personen pro Partei, 3 = Anzahl Parteien
+- **Aufschlüsselung:**
+  - $n$ = Möglichkeiten, ersten Sektor zu platzieren (Rotation)
+  - $3! = 6$ = Zuordnung der 3 Parteien zu den 3 Sektoren  
+  - $(n!)^3$ = Permutationen innerhalb jeder Partei
+- **Beispiel:** 3 Parteien à 4 Personen → $4 \times 6 \times (4!)^3 = 4 \times 6 \times 13824 = 331776$
+- **⚠️ Unterschied:** Das ist NICHT abwechselnde Sitzordnung, sondern Block-Aufteilung!
+
+### **🎯 KLAUSUR-TRICKS:**
+- **Runder vs linearer Tisch:** Faktor $(n-1)$ Unterschied!
+- **Block-Behandlung:** Immer Permutation INNERHALB des Blocks nicht vergessen
+- **Wahrscheinlichkeitsrechnung:** $\frac{\text{günstige Fälle}}{\text{Gesamtfälle}}$ 
+- **Bei "zusammen":** Block als Einheit, bei "abwechselnd": Muster zählen
+
+---
+
+## **4. FAHRSTUHL-AUFGABEN**
 
 ### **a) Fahrstuhl hält nur einmal**
 **Formel:** $\frac{k \cdot \binom{n}{n}}{k^n} = \frac{k}{k^n}$
@@ -83,7 +137,7 @@
 
 ---
 
-## **4. SCHÜTZEN--Würfel/TREFFER-AUFGABEN**
+## **5. WAHRSCHEINLICHKEITS-GRUNDLAGEN**
 
 ### **Binomialverteilung (genau k Treffer) -- Würfel**
 **Formel:** $P(X = k) = \binom{n}{k} \cdot p^k \cdot (1-p)^{n-k}$
@@ -107,7 +161,7 @@
 
 ---
 
-## **5. BAYES'SCHE AUFGABEN**
+## **6. BAYES'SCHE AUFGABEN**
 
 ### **Grundformel (IMMER!):**
 $$P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B|A) \cdot P(A) + P(B|A^c) \cdot P(A^c)}$$
@@ -125,7 +179,7 @@ $$P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B|A) \cdot P(A) + P(B|A^c) \cdot P(A^c)}$$
 
 ---
 
-## **6. URNEN-AUFGABEN**
+## **7. URNEN-AUFGABEN**
 
 ### **a) Ohne Zurücklegen (Hypergeometrische Verteilung)**
 **Grundformel:** $P(X = k) = \frac{\binom{r}{k} \cdot \binom{n-r}{m-k}}{\binom{n}{m}}$
@@ -167,7 +221,7 @@ $$P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B|A) \cdot P(A) + P(B|A^c) \cdot P(A^c)}$$
 
 ---
 
-## **7. WÜRFEL-AUFGABEN**
+## **8. WÜRFEL-AUFGABEN**
 **Vorgehen:** Alle möglichen Werte systematisch auflisten, Wahrscheinlichkeiten berechnen
 
 ### **a) Häufigste Augensumme bei 2 Würfeln**
@@ -252,7 +306,7 @@ $$P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B|A) \cdot P(A) + P(B|A^c) \cdot P(A^c)}$$
 
 ---
 
-## **8. MÜNZWURF-AUFGABEN**
+## **9. MÜNZWURF-AUFGABEN**
 
 ### **Nur Kopf/Zahl**
 **Nur Kopf:** $p^n$
@@ -276,7 +330,7 @@ $$P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B|A) \cdot P(A) + P(B|A^c) \cdot P(A^c)}$$
 
 ---
 
-## **9. STETIGE ZUFALLSVARIABLEN**
+## **10. STETIGE ZUFALLSVARIABLEN**
 
 ### **Normierungskonstante C bestimmen**
 **Formel:** $\int_{-\infty}^{\infty} f(x) dx = 1$
@@ -298,7 +352,7 @@ $$P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B|A) \cdot P(A) + P(B|A^c) \cdot P(A^c)}$$
 
 ---
 
-## **10. MODULARE ARITHMETIK**
+## **11. MODULARE ARITHMETIK**
 
 ### **Euler'sches Theorem**
 **Formel:** $a^{\varphi(n)} \equiv 1 \pmod{n}$ (falls $\gcd(a,n) = 1$)
@@ -318,7 +372,7 @@ $$P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B|A) \cdot P(A) + P(B|A^c) \cdot P(A^c)}$$
 
 ---
 
-## **11. AFFINE CHIFFRE**
+## **12. AFFINE CHIFFRE**
 
 ### **Grundformel**
 **Verschlüsselung:** $f(x) = (ax + b) \bmod 26$
@@ -339,7 +393,7 @@ $$P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B|A) \cdot P(A) + P(B|A^c) \cdot P(A^c)}$$
 
 ---
 
-## **12. RSA-ENTSCHLÜSSELUNG**
+## **13. RSA-ENTSCHLÜSSELUNG**
 
 ### **Schritt-für-Schritt:**
 
